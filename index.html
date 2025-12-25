@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Para mi Amor 💕</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./static/favicon.ico" />
+    <link rel="apple-touch-icon" href="./static/apple-touch-icon.png" />
+    <link rel="manifest" href="./static/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#FF69B4" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Dancing+Script:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen" class="start-screen active">
+      <div class="start-content">
+        <div class="start-hearts">
+          <span class="start-heart">💕</span>
+          <span class="start-heart">❤️</span>
+          <span class="start-heart">💖</span>
+        </div>
+        <h1 class="start-title">Para ti, mi Amor 💕</h1>
+        <p class="start-message">Preparé algo especial para ti...</p>
+        <button id="start-button" class="start-button">
+          <span class="button-text">Abrir Regalo 🎁</span>
+        </button>
+        <p class="start-hint">Toca para comenzar</p>
+      </div>
+    </div>
+
+    <!-- Contenido Principal (oculto hasta presionar inicio) -->
+    <div id="main-content" class="main-content hidden">
+    
+    <!-- Reproductor de música automático (oculto) -->
+    <audio id="background-music" loop>
+      <source src="./cancion1.mp3" type="audio/mpeg">
+      <source src="./cancion1.wav" type="audio/wav">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Control de música visible -->
+    <div class="music-control" id="music-control">
+      <button id="toggle-music" title="Pausar/Reproducir música">🎵</button>
+    </div>
+
+    <!-- Corazones flotantes -->
+    <div class="hearts-container">
+      <div class="heart">❤️</div>
+      <div class="heart">💕</div>
+      <div class="heart">💖</div>
+      <div class="heart">💗</div>
+      <div class="heart">💝</div>
+      <div class="heart">❤️</div>
+      <div class="heart">💕</div>
+      <div class="heart">💖</div>
+    </div>
+
+    <div class="santa-container">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        width="350"
+        height="400"
+      >
+        <path fill="transparent" d="M0 0h350v400H0z" />
+        <g class="plane">
+          <rect
+            x="215.747"
+            y="157.738"
+            width="25.511"
+            height="43.645"
+            rx="12.755"
+            ry="12.755"
+            fill="#c91f37"
+          />
+          <path
+            fill="#ff0018"
+            d="M166.263 185.401h74.995v31.965h-74.995zM166.263 217.366h74.995a31.965 31.965 0 01-31.965 31.965h-43.03v-31.965z"
+          />
+          <g class="hand">
+            <rect
+              x="136.437"
+              y="152.836"
+              width="26.365"
+              height="9.113"
+              rx="4.557"
+              ry="4.557"
+              transform="rotate(-120 149.62 157.393)"
+              fill="#f6bfb1"
+            />
+            <path
+              fill="#ff0018"
+              d="M144.906 163.746l11.978-6.916 20.407 35.346-11.978 6.916z"
+            />
+            <rect
+              x="139.226"
+              y="154.214"
+              width="20.172"
+              height="6.973"
+              rx="3.486"
+              ry="3.486"
+              transform="rotate(-30 149.312 157.7)"
+              fill="#e6e6e6"
+            />
+          </g>
+          <path fill="#f6bfb1" d="M171.488 155.28h37.805v23.974h-37.805z" />
+          <path
+            d="M165.956 185.093v64.545h-12.602v-.024c-.406.015-.818.024-1.23.024a32.272 32.272 0 110-64.545c.412 0 .824.01 1.23.025v-.025z"
+            fill="#c91f37"
+          />
+          <path fill="#8b0000" d="M161.345 185.093h4.918v64.545h-4.918z" />
+          <path
+            d="M113.376 210.296v11.987h-2.34v-.004a6.053 6.053 0 01-.23.004 5.993 5.993 0 110-11.987c.077 0 .154.002.23.005v-.005z"
+            fill="#ff0018"
+          />
+          <g fill="#8b0000">
+            <circle cx="155.505" cy="244.106" r="2.459" />
+            <circle cx="155.505" cy="190.933" r="2.459" />
+            <circle cx="155.505" cy="208.452" r="2.459" />
+            <circle cx="155.505" cy="226.586" r="2.459" />
+          </g>
+          <rect
+            class="blade"
+            x="113.244"
+            y="167.266"
+            width="6.762"
+            height="98.354"
+            rx="3.381"
+            ry="3.381"
+            fill="#8b0000"
+          />
+          <path
+            d="M195.154 211.526h34.732a4.918 4.918 0 014.917 4.918 4.918 4.918 0 01-4.917 4.917h-34.732a4.918 4.918 0 01-4.917-4.917 4.918 4.918 0 014.917-4.918z"
+            fill="#c91f37"
+          />
+          <g fill="#fff">
+            <rect
+              x="174.148"
+              y="171.282"
+              width="15.925"
+              height="40.192"
+              rx="7.963"
+              ry="7.963"
+            />
+            <rect
+              x="188.824"
+              y="171.282"
+              width="15.925"
+              height="40.192"
+              rx="7.963"
+              ry="7.963"
+            />
+            <rect
+              x="180.862"
+              y="167.691"
+              width="15.925"
+              height="51.21"
+              rx="7.963"
+              ry="7.963"
+              transform="rotate(-90 188.824 193.296)"
+            />
+            <path
+              d="M161.55 180.896a7.963 7.963 0 016.42-9.252l20.066-3.625a7.963 7.963 0 019.251 6.42 7.963 7.963 0 01-6.42 9.251l-20.066 3.626a7.963 7.963 0 01-9.251-6.42z"
+            />
+            <path
+              d="M183.122 174.543a7.963 7.963 0 019.251-6.42l19.491 3.521a7.963 7.963 0 016.42 9.252 7.963 7.963 0 01-9.251 6.42l-19.491-3.522a7.963 7.963 0 01-6.42-9.25z"
+            />
+          </g>
+          <rect
+            x="167.185"
+            y="151.899"
+            width="6.455"
+            height="27.355"
+            rx="3.227"
+            ry="3.227"
+            fill="#c91f37"
+          />
+          <rect
+            x="207.449"
+            y="151.899"
+            width="6.455"
+            height="27.355"
+            rx="3.227"
+            ry="3.227"
+            fill="#c91f37"
+          />
+          <circle cx="190.083" cy="165.883" r="3.842" fill="#ff69b4" />
+          <circle cx="190.083" cy="179.868" r="6.454" />
+          <path
+            fill="#ff0018"
+            d="M167.185 148.21h46.718v7.069h-46.718zM213.903 145.137h-46.718a10.757 10.757 0 0110.757-10.758h25.204a10.757 10.757 0 0110.757 10.758z"
+          />
+          <path fill="#c91f37" d="M167.185 143.907h46.718v4.303h-46.718z" />
+          <circle cx="181.016" cy="146.059" r="7.377" fill="#c91f37" />
+          <circle cx="181.016" cy="146.059" r="5.62" fill="#8b0000" />
+          <circle cx="200.072" cy="146.059" r="7.377" fill="#c91f37" />
+          <circle cx="200.072" cy="146.059" r="5.62" fill="#8b0000" />
+          <path
+            d="M176.713 165.422s2.459-3.995 6.454 0M197.306 165.422s2.459-3.995 6.454 0"
+            fill="none"
+            stroke="#000"
+            stroke-miterlimit="10"
+            stroke-width="1.844"
+          />
+        </g>
+      </svg>
+    </div>
+
+    <div class="snowflakes">
+      <script>
+        for (var i = 0; i < 10; i++) {
+          document.write("<div class='snowflake'>❄</div>");
+        }
+      </script>
+    </div>
+
+    <ul class="lightrope">
+      <script>
+        for (var i = 0; i < window.screen.width / 50; i++) {
+          document.write("<li></li>");
+        }
+      </script>
+    </ul>
+
+    <h1>Para mi Amor 💕</h1>
+    <p class="subtitle">Feliz Navidad Mi amor 💕</p>
+
+    <div class="tree-container">
+      <div class="tree">
+        <div class="star"></div>
+        <div class="cone tree-cone1"></div>
+        <div class="cone tree-cone2"></div>
+        <div class="cone tree-cone3"></div>
+        <div class="trunk"></div>
+        <div class="ornament or1">
+          <div class="shine"></div>
+        </div>
+        <div class="ornament or2">
+          <div class="shine"></div>
+        </div>
+        <div class="ornament or3">
+          <div class="shine"></div>
+        </div>
+        <div class="ornament or4">
+          <div class="shine"></div>
+        </div>
+        <div class="ornament or5">
+          <div class="shine"></div>
+        </div>
+        <div class="ornament or6">
+          <div class="shine"></div>
+        </div>
+        <div class="bells-container">
+          <div class="bell bell1">
+            <div class="bell-top"></div>
+            <div class="bell-bottom"></div>
+            <div class="bell-mid"></div>
+          </div>
+          <div class="bell bell2">
+            <div class="bell-top"></div>
+            <div class="bell-bottom"></div>
+            <div class="bell-mid"></div>
+          </div>
+          <div class="bow">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SOLO 2 REGALOS CLICKEABLES REPOSICIONADOS -->
+      <div class="gifts-wrapper">
+        <div class="gift clickable-gift" data-gift="1"></div>
+        <div class="ribbon"></div>
+        <div class="gift2 clickable-gift" data-gift="2"></div>
+        <div class="ribbon2"></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="deer-container">
+      <div class="artboard">
+        <div class="deer">
+          <div class="rocking">
+            <div class="head">
+              <div class="horns">
+                <div class="horn horn-left">
+                  <div class="line line-one"></div>
+                  <div class="line line-two"></div>
+                  <div class="line line-three"></div>
+                </div>
+                <div class="horn horn-right">
+                  <div class="line line-one"></div>
+                  <div class="line line-two"></div>
+                  <div class="line line-three"></div>
+                </div>
+              </div>
+              <div class="ears">
+                <div class="ear ear-left"></div>
+                <div class="ear ear-right"></div>
+              </div>
+              <div class="eyes">
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+              </div>
+              <div class="nose"></div>
+            </div>
+            <div class="body">
+              <div class="shadow"></div>
+              <div class="hooves">
+                <div class="hoof-one">
+                  <div class="line"></div>
+                  <div class="anim-part">
+                    <div class="circle">
+                      <div class="circle">
+                        <div class="circle">
+                          <div class="circle">
+                            <div class="circle circle-last"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hoof-two">
+                  <div class="line-one"></div>
+                  <div class="line-two"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tail">
+              <div class="circle">
+                <div class="circle">
+                  <div class="circle">
+                    <div class="circle">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="legs">
+            <div class="leg-left">
+              <div class="anim-part">
+                <div class="line"></div>
+              </div>
+            </div>
+            <div class="leg-right">
+              <div class="anim-part">
+                <div class="circle">
+                  <div class="circle">
+                    <div class="circle">
+                      <div class="circle">
+                        <div class="circle">
+                          <div class="circle">
+                            <div class="circle">
+                              <div class="circle">
+                                <div class="circle circle-last"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="presents">
+          <div class="present present-one"></div>
+          <div class="present present-two"></div>
+          <div class="present present-two present-two-right"></div>
+          <div class="present present-three"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modales para las cartas -->
+    <div id="modal-overlay" class="modal-overlay">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="letter" id="text-letter">
+          <div class="letter-header">
+            <h2 id="modal-title">💕 Para ti, mi Amor 💕</h2>
+          </div>
+          <div class="letter-body">
+            <p id="modal-message"></p>
+          </div>
+          <div class="letter-footer">
+            <p>Con todo mi amor ❤️</p>
+          </div>
+        </div>
+        <!-- Carta con imagen (oculta por defecto) -->
+        <div class="letter image-letter" id="image-letter" style="display: none;">
+          <div class="letter-header">
+            <h2>💖 Para ti mi niña 💖</h2>
+          </div>
+          <div class="image-container">
+            <img id="modal-image" src="" alt="Te amo" />
+            <div class="image-overlay">
+              <p class="image-text">Te Amo 💕</p>
+            </div>
+          </div>
+          <div class="letter-footer">
+            <p>Con todo mi corazón ❤️</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div> <!-- Cierre de main-content -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
