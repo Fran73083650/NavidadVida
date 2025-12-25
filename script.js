@@ -1,6 +1,6 @@
 // Mensajes románticos para cada regalo
 const giftMessages = {
-  1: "hoak",
+  1: "Para ti, mi amor ❤️. En esta Navidad quiero recordarte cuánto te amo y lo agradecido que estoy por tenerte en mi vida. Desde que llegaste, todo se volvió más especial: mis días tienen sentido, mis sueños dirección y mi corazón un hogar contigo. Este año nos hizo crecer y el próximo vendrá lleno de proyectos, metas y aprendizajes que quiero vivir a tu lado. Prometo estar contigo, apoyarte, cuidarte y elegirte todos los días. Nunca olvides lo valiosa y fuerte que eres. Te amo más de lo que las palabras pueden explicar. Feliz Navidad, mi amor 🎄💕",
   2: null // Regalo 2 muestra imagen
 };
 
